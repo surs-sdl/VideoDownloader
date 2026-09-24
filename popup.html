@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+    .preview-area {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    #thumbnail {
+      max-width: 100%;
+      max-height: 150px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f0f0f0;
+    }
+    .video-info {
+      font-size: 11px;
+      color: #555;
+      word-break: break-all;
+      background: #f9f9f9;
+      padding: 6px;
+      border-radius: 4px;
+      margin: 8px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    #status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      color: #333;
+    }
+    .note {
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .spinner {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-top-color: #4CAF50;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-area">
+    <img id="thumbnail" alt="Video preview" style="display:none;">
+    <div id="loadingThumb" class="spinner" style="display:none;"></div>
+    <div id="noThumb" style="display:none; color:#999; font-size:12px;">⚠️ Preview not available</div>
+  </div>
+  <div class="video-info" id="videoUrlDisplay"></div>
+  <button id="downloadBtn" disabled>⬇️ DOWNLOAD VIDEO</button>
+  <div id="status">Loading preview...</div>
+  <div class="note">Thumbnail is captured from the <strong>current video frame</strong>.</div>
+  <script src="popup.js"></script>
+</body>
+</html>
