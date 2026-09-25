@@ -4,6 +4,10 @@ A lightweight Chrome extension that detects direct HTML5 video sources on the ac
 
 The extension also attempts to capture a video frame and display it as a thumbnail preview when browser security restrictions allow it.
 
+## Screenshot
+
+![Instant Video Downloader](docs/screenshot.png)
+
 ## Features
 
 - Detects HTML5 `<video>` elements
